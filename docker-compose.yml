@@ -1,7 +1,7 @@
 version: '3'
 services:
   expressions-web:
-    image: 192.168.50.12/engineering/expressions-web:2.0
+    image: bkauf/expressions-web
     volumes:
       - expressions:/expressions
     ports:
@@ -15,7 +15,7 @@ services:
   expressions-engine:
     depends_on:
        - expressions-web
-    image: 192.168.50.12/engineering/expressions-engine:2.1
+    image: bkauf/expressions-engine
     volumes:
        - expressions:/expressions
        - /var/run/docker.sock:/var/run/docker.sock
