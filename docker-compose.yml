@@ -1,0 +1,31 @@
+version: '3'
+services:
+  expressions-web:
+    image: 192.168.50.12/engineering/expressions-web:2.0
+    volumes:
+      - expressions:/expressions
+    ports:
+      - "9000:8080"
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.expression == yes
+  expressions-engine:
+    depends_on:
+       - expressions-web
+    image: 192.168.50.12/engineering/expressions-engine:2.1
+    volumes:
+       - expressions:/expressions
+       - /var/run/docker.sock:/var/run/docker.sock
+       - /usr/bin/docker:/usr/bin/docker
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.expression == yes
+volumes:
+    expressions:
+      external: true

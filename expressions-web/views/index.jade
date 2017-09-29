@@ -1,0 +1,72 @@
+doctype html
+html
+  head
+    link(href='/stylesheets/style.css', rel='stylesheet')
+    link(href='http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css', rel='stylesheet')
+    script(src='http://code.jquery.com/jquery-1.12.4.js')
+    script(src='/javascripts/jquery-ui-1.12.1/jquery-ui.js')
+    script(src='/javascripts/ace/src/ace.js')
+    script(src='/javascripts/ace/src/mode-javascript.js')
+    script(src='/javascripts/ace/src/mode-javascript.js')
+    title From #{container}
+
+  body(id="exp")
+    #wrapper
+      #header
+        #header-left
+          h1= title
+          //h2 From Container #{container}
+        #header-right
+          a(href='/')
+            img(src="/images/whale_up.png", width="150px")
+      #main
+        form(name="esp-create", method="POST", action="/save")
+
+          span.label Name:
+          input#espName(type='text', name='espName')
+          br
+          - var expressions = ['container', 'service', 'cron']
+          span.label Fire off Event:
+          select#espType(name='espType')
+            for item in expressions
+              option(value = item) #{item}
+
+          br
+          input(type='submit', value='save', id='save-button')
+
+          #aceCode test
+          textarea#espCode(name='espCode')
+
+
+
+          script.
+            var textarea = $('#espCode');
+            var editor = ace.edit("aceCode");
+            editor.setTheme("ace/theme/twilight");
+            editor.getSession().setMode("ace/mode/javascript");
+            //var JavaScriptMode = ace.require("ace/mode/javascript").Mode;
+            //editor.session.setMode(new JavaScriptMode());
+            editor.getSession().on('change', function () {
+              textarea.val(editor.getSession().getValue());
+            //  alert(textarea.val());
+
+              });
+              textarea.val(editor.getSession().getValue());
+
+
+
+
+
+
+          script.
+              $( "#espBody" ).autocomplete({source: [ "service.container", "java", "php", "coldfusion", "javascript", "asp", "ruby" ]});
+
+        - var keys = exp.length
+        - console.log(exp)
+
+        if keys > 0
+              #exp-list Current Expressions:
+                each item in exp
+                  ul
+                    li
+                      a(href='/edit?name=#{item.type}/#{item.name}') #{item.type} - #{item.name}

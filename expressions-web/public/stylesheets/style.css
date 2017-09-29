@@ -1,0 +1,74 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*background-image: url("../images/whale-long.svg");
+  background-repeat: no-repeat;
+  background-position: center 270px; */
+}
+
+a {
+  color: #00B7FF;
+}
+h2 {
+border:2px dotted #33E1FF;
+padding: 10px;
+
+}
+
+
+#wrapper{
+  margin-left: auto;
+  margin-right: auto;
+  width: 650px;
+}
+#header{width:100%}
+#header-left{
+  float: left;
+  width: 49%;
+  margin: 0;
+}
+#header-right{
+  float: right;
+  width: 49%;
+  margin: 0;
+  text-align: right;
+}
+#main{width: 100%;}
+#menu{
+  width:33%;
+  float:left;
+  margin: 0;
+}
+#aceCode{
+  width:750px;
+  height: 400px;
+  position: relative;
+}
+#espCode{
+  display: none;
+
+}
+#exp-list{
+  height: 200px;
+  position: relative;
+}
+#expressions{
+
+}
+input#espName{
+
+
+}
+.espType, .espName{
+font-size:20px;
+color: blue;
+
+}
+input#save-button, input#espName, select#espType{
+    color:#08233e;
+    margin: 10px;
+    border: 1px solid blue;
+
+    font-size:20px;
+
+}

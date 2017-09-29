@@ -1,0 +1,21 @@
+{
+  "name": "events-watcher",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cheerio": "^1.0.0-rc.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "docker-events": "0.0.2",
+    "dockerode": "^2.5.0",
+    "jquery": "^3.2.1",
+    "jsdom": "^11.2.0",
+    "node-schedule": "^1.2.4",
+    "nodemailer": "^4.1.0",
+    "serve-favicon": "~2.4.2"
+  }
+}
