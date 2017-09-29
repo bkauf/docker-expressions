@@ -46,7 +46,6 @@ var transporter = nodemailer.createTransport({
     pass: 'password'
   }
 });
-/* End Mail Config*/
 
 var mailOptions = {
   from: 'test@gmail.com',
