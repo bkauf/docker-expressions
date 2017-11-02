@@ -36,7 +36,7 @@ docker run -itd -p 8088:8080 --rm -v \
 ## Sample Expressions
 
 ### Send and Email on a container kill Event
-
+(note you have to enable your gmail account to allow automated emails for the below to work)
 ```javascript
 
 var transporter = nodemailer.createTransport({
