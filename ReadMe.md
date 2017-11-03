@@ -3,7 +3,8 @@
 
 Create your own dynamic functionality based on events that happen in your cluster!
 
-There are two containers, a web portal to write your expression scripts, and an engine that fires them. All expressions are written in JavaScript and get executed upon matching events from the docker events stream or every 60 seconds if CRON is selected. Both services must run on a management node!
+There are two containers, a web portal to write your expression scripts, and an engine that fires them. All expressions are written in JavaScript and get executed upon matching events from the docker events stream or every 60 seconds if CRON is selected. Both services must run on a management node! In a UCP setup if you add  the expression = yes label to one of your manager nodes and enable scheduling containers on it the compose file in this dir will work to launch the application.
+
 
 
 ![Expression-Web](/Expressions-WalkThough.png?raw=true "Docker Expressions")
@@ -16,7 +17,7 @@ There are two containers, a web portal to write your expression scripts, and an 
 
 ![Expression-Web](/Expressions-Web2.png?raw=true "Expression-Web UI")
 
-This is the web interface container. It's written in Node.js. It needs access to a /expressions mount to store your expressions in folders that corespond to the events you've chosen for them to fire off.
+This is the web interface container. It's written in Node.js. It needs access to an /expressions mount to store your expressions in folders that correspond to the events you've chosen for them to fire off.
 
 ```
 docker run -itd --rm -p 8090:8080 -v /home/bkauf/Desktop/expressions:/expressions \
