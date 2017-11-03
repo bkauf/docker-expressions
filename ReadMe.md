@@ -1,6 +1,8 @@
 # Docker Expressions
 ## A JavaScript Based Events Parser and Automation Tool
 
+Create your own dynamic functionality based on events that happen in your cluster!
+
 There are two containers, a web portal to write your expression scripts, and an engine that fires them. All expressions are written in JavaScript and get executed upon matching events from the docker events stream or every 60 seconds if CRON is selected. Both services must run on a management node!
 
 
