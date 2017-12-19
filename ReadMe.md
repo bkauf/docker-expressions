@@ -30,7 +30,7 @@ bkauf/expressions-web
 The Expression Engine will need access to this same /expressions mount as the expression-web container and also access to the docker.sock to read the events API. Ideally both the engine and the web expression containers are run on a swarm manager node and have a shared volume. It may also be necessary to enable api email access to the email account you specify in your code (must with a gmail account).
 
 ```
-docker run -itd -p 8088:8080 --rm -v \
+docker run -itd -p 8088:8080 --rm \
 -v /usr/bin/docker:/usr/bin/docker \
 -v /home/bkauf/Desktop/expressions:/expressions \
 -v /var/run/docker.sock:/var/run/docker.sock bkauf/expressions-engine
